@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+     <navigation-rule>
+  <display-name>userPage.xhtml</display-name>
+  <from-view-id>/userPage.xhtml</from-view-id>
+  <navigation-case>
+  			
+	       <from-outcome>post</from-outcome>
+      <to-view-id>/addPost.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+  			
+	       <from-outcome>logout</from-outcome>
+      <to-view-id>/main.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <display-name>addPost.xhtml</display-name>
+  <from-view-id>/addPost.xhtml</from-view-id>
+  <navigation-case>
+	  <from-outcome>back</from-outcome>
+      <to-view-id>/userPage.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+  <display-name>addPost.xhtml</display-name>
+  <from-view-id>/addPost.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>true</from-outcome>
+      <to-view-id>/postAdded.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+
+ 
+  <navigation-rule>
+  <display-name>postAdded.xhtml</display-name>
+  <from-view-id>/postAdded.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/userPage.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+<display-name>login.xhtml</display-name>
+<from-view-id>/login.xhtml</from-view-id>
+<navigation-case>
+	       <from-outcome>true</from-outcome>
+      <to-view-id>/userPage.xhtml</to-view-id>
+  </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<display-name>register.xhtml</display-name>
+<from-view-id>/register.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>true</from-outcome>
+<to-view-id>/registersuccess.xhtml</to-view-id>
+</navigation-case>
+</navigation-rule>
+ 
+<navigation-rule>
+<display-name>registersuccess.xhtml</display-name>
+<from-view-id>/registersuccess.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>login</from-outcome>
+<to-view-id>/login.xhtml</to-view-id>
+</navigation-case>
+
+</navigation-rule>
+<navigation-rule>
+<display-name>main.xhtml</display-name>
+<from-view-id>/main.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>login</from-outcome>
+<to-view-id>/login.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+<from-outcome>register</from-outcome>
+<to-view-id>/register.xhtml</to-view-id>
+</navigation-case>
+</navigation-rule>
+
+</faces-config>

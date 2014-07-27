@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h1="http://java.sun.com/jsf/html"
+      xmlns:h2="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+    <h1:outputText value="UniversIdee - The Ohio State University"></h1:outputText>
+    	<h:form>
+	    	<h:panelGrid columns="2">	      	
+	    	<h:commandButton value="Login" action="login"></h:commandButton>
+	    	<h:commandButton value="Register" action="register"></h:commandButton>
+		    </h:panelGrid>
+		</h:form>
+		<h:form>
+		<h:panelGrid columns="2">
+		    <h2:outputText value="Top Posts"></h2:outputText>
+		    <h:commandButton value="Refresh">
+		    <f:ajax execute="getposts" render="getposts"></f:ajax>
+		    </h:commandButton>
+	    </h:panelGrid>
+		<h:panelGroup id="getposts" >
+		<ui:repeat value="#{mainPagebean.Post()}" var="x">				    
+		  	<h:outputText value="#{x[0]}" /> 
+		<br />         		
+		</ui:repeat>
+		</h:panelGroup>
+		</h:form>
+    </ui:define>
+</ui:composition>
+</html>
